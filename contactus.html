@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title> Udomljavanje kucnih ljubimaca  | Profil</title>
+
+</head>
+<body>
+
+    <!--Header-->
+    <header >
+        <div class="header_container">
+            <div id="title">
+                <h1>Nadjite svog najboljeg prijatelja!!</h1>
+            </div>
+            <nav calss="main-nav">
+                <ul>
+                    <li ></li><a href="index.html"> Home</a> </li>
+                    <li><a href="profil.html"> Profile </a></li>
+                    <li><a href="filter.html"> Search </a></li>
+                    <li><a href="gallery.html"> Gallery </a></li> 
+                    <li class="current"><a href="contactus.html"> Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-contactus">
+        <!-- ovo sam ukrala sa neta, tako da ako ne radimo php slobodno obrisi ovaj action page -->
+        <form action="action_page.php"> 
+      
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Your email..">
+      
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Srbija</option>
+            <option value="bosna">Bosna</option>
+            <option value="hrvatska">Hrvatska</option>
+            <option value="crnagora">Crna Gora</option>
+          </select>
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit">
+
+      
+        </form>
+      </div>
+
+
+    <footer>
+        <div class="footer_container">
+        <p>Aplikacija za udomljavanje kucnih ljubimaca</p>
+        <p>&copy; Sanja Golubovic, Marija Simic i Isidora Stanojevic</p>
+        <p>Jun 2020</p>
+        </div>
+    </footer>
+
+</body>
+</html>
