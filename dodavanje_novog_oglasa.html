@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title> Udomljavanje kucnih ljubimaca  | Profil</title>
+
+</head>
+<body>
+
+    <!--Header-->
+    <header >
+        <div class="header_container">
+            <div id="title">
+                <h1>Nadjite svog najboljeg prijatelja!!</h1>
+            </div>
+            <nav calss="main-nav">
+                <ul>
+                    <li ></li><a href="index.html"> Home</a> </li>
+                    <li class="current"><a href="profil.html"> Profile </a></li>
+                    <li><a href="pretraga_ljubimaca.html"> Search </a></li>
+                    <li><a href="gallery.html"> Gallery </a></li> 
+                    <li ><a href="contactus.html"> Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-signup">
+      
+       
+        <form action="action_page.php"> 
+            <label for="Species">Species</label>
+                <select id="species" name="species">
+                    <option value="dog">Pas</option>
+                    <option value="cat">Macka</option>
+                    <option value="hamster">Hrcak</option>
+                    <option value="riba">Riba</option>
+                </select>
+                
+      
+            <label for="fname">Pet Name</label>
+            <input type="text" id="pname" name="petname" placeholder="Pet name..">
+            
+            <label for="fname">Breed</label>
+            <input type="text" id="breed" name="breed" placeholder="Breed of the pet..">  
+
+            <label for="fname">Age</label>
+            <input type="text" id="age" name="age" placeholder="Age..">
+    
+            <label for="color">Color</label>
+            <input type="text" id="color" name="color" placeholder="Color..">
+
+            <label for="weight">Weight</label>
+            <input type="text" id="weight" name="weight" placeholder="Weight...">
+
+            <input type="checkbox" name="papers" id="papers"/>
+            <label for="papers">Pet has got papers</label>
+
+            </br>
+            </br>
+
+            <label for="subject">Description</label>
+            <textarea id="description" name="description" placeholder="Description" style="height:200px"></textarea>
+
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="img" accept="image/*">
+          
+            <div id="termscond">
+                <p class="t&c"> 
+                    <input type="checkbox" name="Terms" id="terms" /> 
+                    <label for="termsandconditions">I Agree With terms and conditions </label>
+                </p>
+                <input type="submit" value="Register">
+            </div>
+
+
+        </form>
+      </div>
+
+
+    <footer>
+        <div class="footer_container">
+        <p>Aplikacija za udomljavanje kucnih ljubimaca</p>
+        <p>&copy; Sanja Golubovic, Marija Simic i Isidora Stanojevic</p>
+        <p>Jun 2020</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -20,7 +20,7 @@
                 <ul>
                     <li ></li><a href="index.html"> Home</a> </li>
                     <li><a href="profil.html"> Profile </a></li>
-                    <li class="current"><a href="filter.html"> Search </a></li>
+                    <li class="current"><a href="pretraga_ljubimaca.html"> Search </a></li>
                     <li ><a href="gallery.html"> Gallery </a></li class="current"> 
                     <li><a href="contactus.html"> Contact Us</a></li>
                 </ul>
@@ -29,17 +29,128 @@
     </header>
 
 
-    <div class="search">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            
-            
-            <button type="submit" class="search_button">search</button>
-        </form>
-    </div>
+    <div class="nav-bar">
+
+        <div id="filter-button-container">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('cat')"> Cats</button>
+            <button class="btn" onclick="filterSelection('dog')"> Dogs</button>
+            <button class="btn" onclick="filterSelection('hamster')"> Hamsters</button>
+            <button class="btn" onclick="filterSelection('fish')"> Fish</button>
+        </div>
     
 
+        <div class="search">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." >
+                <button type="submit" class="search_button">Search</button>
+            </form>
+        </div>     
+    </div>
 
+
+      <div class="container-oglasi">
+            <div class="filterDiv dog">
+                <div class="card">
+                    <img src="images/Oki.jpg" alt="Oki" style="width:100%">
+                    <h1>Oki</h1>
+                    <p class="opis">Simpatican, razigran, veseo</p>
+                    <p><button class="udomi">Udomi</button></p>
+                </div>
+            </div>
+
+            <div class="filterDiv cat">
+                <div class="card">              
+                    <img src="images/mau.jpg" alt="Mau" style="width:100%">
+                    <h1>Mau</h1>
+                    <p class="opis">Fina, cista slatka kao secer</p>
+                    <p><button class="udomi">Udomi</button></p>
+                </div >
+            </div>
+        
+            <div class="filterDiv dog">
+            <div class="card">
+                    <img src="images/ruza.jpg" alt="Ruza" style="width:100%">
+                    <h1>Ruza</h1>
+                    <p class="opis">Fina, cista slatka kao secer</p>
+                    <p><button class="udomi">Udomi</button></p>
+                </div>
+            </div>
+
+            <div class="filterDiv dog">
+                <div class="card">
+                    <img src="images/Zvoncica.jpg" alt="Zvoncica" style="width:100%">
+                    <h1>Zvoncica</h1>
+                    <p class="opis">Fina, cista slatka kao secer</p>
+                    <p><button class="udomi">Udomi</button></p>
+                </div>
+            </div>
+
+            <div class="filterDiv dog">
+                <div class="card">
+                    <img src="images/fibicko.jpg" alt="Fibi" style="width:100%">
+                    <h1>Fibi</h1>
+                    <p class="opis">Fina, cista slatka kao secer</p>
+                    <p><button class="udomi">Udomi</button></p>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+// ovde bi trebala da ide skripta za filtriranje ili moze i preko action-page.php  
+// ova skripta mi ne radi, odradi da promeni dugme ali mi ne filtrira, pojma nemam gde je greska :/
+                filterSelection("all")
+                function filterSelection(c) {
+                var x, i;
+                x = document.getElementsByClassName("filterDiv");
+                if (c == "all") c = "";
+                // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+                for (i = 0; i < x.length; i++) {
+                    w3RemoveClass(x[i], "show");
+                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                }
+                }
+
+                // Show filtered elements
+                function w3AddClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                    }
+                }
+                }
+
+                // Hide elements that are not selected
+                function w3RemoveClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                    }
+                }
+                element.className = arr1.join(" ");
+                }
+
+                // Add active class to the current control button (highlight it)
+                var btnContainer = document.getElementById("filter-button-container");
+                var btns = btnContainer.getElementsByClassName("btn");
+                for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+                }
+
+        </script>
+
+        
     <footer>
         <div class="footer_container">
         <p>Aplikacija za udomljavanje kucnih ljubimaca</p>
